@@ -1,0 +1,179 @@
+.App {
+  text-align: center;
+}
+
+* {
+  transition: all 0.45s ease;
+  margin: 0px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.navlinks a:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.logotext:hover {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.nav {
+  position: relative;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(40, 116, 240, 1);
+  color: white;
+  padding: 0px 70px;
+}
+
+.logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo .logoimg {
+  width: 60px;
+  margin: 5px 4px 3px 5px;
+  padding: 1px;
+  cursor: pointer;
+}
+
+.logo .logoimg:hover {
+  width: 80px;
+}
+
+.logotext {
+  font-size: 25px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+.navlinks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navlinks li {
+  height: 100%;
+  font-size: 20px;
+  padding: 10px 15px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 60px;
+  background: rgba(40, 116, 240, 1);
+  width: 100%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Register form css */
+
+.container {
+  position: relative;
+  /* height: 50vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.registerform,
+.loginform,
+.addproductform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 300px; */
+  /* width: 450px; */
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+.registerform h2,
+.loginform h2 {
+  font-size: 30px;
+}
+
+.registerform input,
+.loginform input,
+.addproductform input {
+  padding: 5px 20px;
+  height: 26px;
+  margin: 18px 0px;
+  width: 300px;
+  font-size: 14px;
+  border: 1px solid rgba(40, 116, 240, 1);
+}
+
+.submitbtn {
+  font-size: 16px;
+  width: 140px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  background-color: rgba(40, 116, 240, 1);
+  color: white;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 10px;
+  /* border-radius: 6px; */
+}
+
+.errorcheck {
+  margin-top: -12px;
+  font-size: 14px;
+  color: red;
+}
+
+/* product list form css */
+
+.listcontainer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 79vh;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.tablelist {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+.tablelist tr {
+  margin: 5px;
+}
+
+.tablelist td,
+.tablelist th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.deletebtn, .updatebtn{
+  font-size: 15px;
+  padding: 10px;
+}
