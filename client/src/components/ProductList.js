@@ -26,10 +26,9 @@ const ProductList = () => {
       fetchproducts();
       
     }, []);
-
     
     const fetchproducts = async ()=>{
-      dispatch(showLoading());
+     
       let user = await JSON.parse(localStorage.getItem("user"));
       console.log(user);
       let result = await fetch(`http://localhost:10/productList/${user._id}`,{
@@ -37,10 +36,16 @@ const ProductList = () => {
             authorization: `bearer ${await JSON.parse(localStorage.getItem('token'))}`
         }
       });
+      
       result = await result.json();
+      console.log("fetchproducts", result);
+
+      if(result.success==false){
+        localStorage.clear();
+      }
 
       setList(result);
-      dispatch(hideLoading());
+      
     }
     
 

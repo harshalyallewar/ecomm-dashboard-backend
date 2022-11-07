@@ -93,7 +93,7 @@ app.get("/productList/:id", tokenVerify, async (req, res) => {
     if (productlist.length > 0) {
       res.send(productlist);
     } else {
-      res.send({ Result: "No Products" });
+      res.send({ Result: "No Products", success: true });
     }
   } catch (err) {
     res.send({ result, success: false });
@@ -159,13 +159,13 @@ function tokenVerify(req, res, next) {
 
       Jwt.verify(token, jwtKey, (err, valid) => {
         if (err) {
-          res.status(401).send({ result: "authorization failed" });
+          res.status(401).send({ result: "authorization failed", success:false });
         } else {
           next();
         }
       });
     } else {
-      res.status(403).send({ result: "please send headers" });
+      res.status(403).send({ result: "please send headers", success: false });
     }
   } catch {
     res.send({ result: "no result", success: false });

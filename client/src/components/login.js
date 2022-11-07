@@ -122,13 +122,20 @@ const Login = () => {
           <Grid item xs={12} sx={{ m: 1 }}>
             <Typography
               variant="h5"
-              sx={{ fontSize: 30, fontWeight: "700", letterSpacing: 1, mb: 3 }}
+              sx={{
+                color: "#434A54",
+                fontSize: 30,
+                fontWeight: "700",
+                letterSpacing: 1,
+                mb: 2,
+              }}
             >
               Login
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{ m: 1 }}>
             <TextField
+              size="small"
               onChange={(e) => setEmail(e.target.value)}
               label="Enter Email"
               sx={{ width: { xs: "260px", sm: "290px", md: "330px" } }}
@@ -137,13 +144,14 @@ const Login = () => {
 
           <Grid item xs={12} sx={{ m: 1 }}>
             <TextField
+              size="small"
               onChange={(e) => setPass(e.target.value)}
               label="Enter Password"
               sx={{ width: { xs: "260px", sm: "290px", md: "330px" } }}
             />
           </Grid>
 
-          <Grid item xs={12} sx={{ m: 1 }}>
+          <Grid item xs={12} sx={{ m: 1,mt:2 }}>
             <Button onClick={getdata} variant="contained" size="large">
               Login
             </Button>

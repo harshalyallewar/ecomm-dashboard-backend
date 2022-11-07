@@ -87,7 +87,6 @@ const Signup = () => {
   const btnstyle = { margin: "8px 0" };
 
   return (
-
     <Container
       sx={{
         display: "flex",
@@ -107,17 +106,24 @@ const Signup = () => {
           borderRadius: 4,
         }}
       >
-        <Grid container sx={{ mt: 2, mb: 2 }}>
-          <Grid item xs={12} sx={{ m: 1 }}>
+        <Grid container sx={{ mt: 2, mb: 3 }}>
+          <Grid item xs={12} sx={{ m: 1, mb: 0 }}>
             <Typography
               variant="h5"
-              sx={{ fontSize: 30, fontWeight: "700", letterSpacing: 1, mb: 3 }}
+              sx={{
+                color: "#434A54",
+                fontSize: 30,
+                fontWeight: "700",
+                letterSpacing: 1,
+                mb: 3,
+              }}
             >
               Register
             </Typography>
           </Grid>
           <Grid item xs={12} sx={{ m: 1 }}>
             <TextField
+              size="small"
               required
               label="Enter Username"
               sx={{ width: { xs: "260px", sm: "290px", md: "330px" } }}
@@ -126,6 +132,7 @@ const Signup = () => {
           </Grid>
           <Grid item xs={12} sx={{ m: 1 }}>
             <TextField
+              size="small"
               required
               label="Enter Password"
               sx={{ width: { xs: "260px", sm: "290px", md: "330px" } }}
@@ -134,13 +141,15 @@ const Signup = () => {
           </Grid>
           <Grid item xs={12} sx={{ m: 1 }}>
             <TextField
-              required type='email'
+              size="small"
+              required
+              type="email"
               label="Enter Email"
               sx={{ width: { xs: "260px", sm: "290px", md: "330px" } }}
               onChange={(e) => setEmail(e.target.value)}
             />
           </Grid>
-          <Grid item xs={12} sx={{ m: 1 }}>
+          <Grid item xs={12} sx={{ m: 1, mt: 3 }}>
             <Button onClick={showdata} variant="contained" size="large">
               Register
             </Button>
@@ -154,9 +163,7 @@ const Signup = () => {
         open={err}
         onClose={handleClose}
       >
-        <Alert severity="error">
-         {errmsg}
-        </Alert>
+        <Alert severity="error">{errmsg}</Alert>
       </Snackbar>
     </Container>
   );
