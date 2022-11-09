@@ -43,7 +43,7 @@ const UpdateProduct = () => {
   
   const getProductDetails = async ()=>{
     dispatch(showLoading());
-        let product = await fetch(`http://localhost:10/getProduct/${id}`, {
+        let product = await fetch(`/getProduct/${id}`, {
           headers: {
             authorization: `bearer ${await JSON.parse(
               localStorage.getItem("token")
@@ -63,7 +63,7 @@ const UpdateProduct = () => {
         let user = await JSON.parse(localStorage.getItem("user"));
         let userId = user._id;
 
-        let result = await fetch(`http://localhost:10/updateProduct/${id}`, {
+        let result = await fetch(`/updateProduct/${id}`, {
           method: "PUT",
           body: JSON.stringify({ name, price, category, userId, company }),
           headers: {

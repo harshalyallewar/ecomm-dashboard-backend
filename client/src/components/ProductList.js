@@ -31,7 +31,7 @@ const ProductList = () => {
      
       let user = await JSON.parse(localStorage.getItem("user"));
       console.log(user);
-      let result = await fetch(`http://localhost:10/productList/${user._id}`,{
+      let result = await fetch(`/productList/${user._id}`,{
         headers: {
             authorization: `bearer ${await JSON.parse(localStorage.getItem('token'))}`
         }
@@ -51,7 +51,7 @@ const ProductList = () => {
 
     const deleteProduct = async (id)=>{
       dispatch(showLoading());
-      let result = await fetch(`http://localhost:10/deleteProduct/${id}`, {
+      let result = await fetch(`/deleteProduct/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `bearer ${await JSON.parse(
@@ -66,7 +66,7 @@ const ProductList = () => {
 
     const searchProduct = async (e)=>{
       console.log("searchProduct called");
-      let result = await fetch(`http://localhost:10/search/${e.target.value}`, {
+      let result = await fetch(`/search/${e.target.value}`, {
         method: "GET",
         headers: {
           authorization: `bearer ${await JSON.parse(

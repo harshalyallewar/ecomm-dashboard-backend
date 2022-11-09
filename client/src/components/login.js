@@ -77,27 +77,6 @@ const Login = () => {
   };
 
   return (
-    // <div className="container">
-    //   <form className="loginform">
-    //     <h2>Login</h2>
-    //     <input
-    //       className="email inputBox"
-    //       placeholder="Enter the Email"
-    //       type="text"
-    //       onChange={(e) => setEmail(e.target.value)}
-    //     />
-    //     <input
-    //       className="password inputBox"
-    //       placeholder="Enter the password"
-    //       type="password"
-    //       onChange={(e) => setPass(e.target.value)}
-    //     />
-
-    //     <button className="submitbtn" onClick={getdata}>
-    //       Login
-    //     </button>
-    //   </form>
-    // </div>
 
     <Container
       sx={{
