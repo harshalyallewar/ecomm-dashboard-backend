@@ -22,7 +22,6 @@ import { showLoading, hideLoading } from "../redux/alertsSlice";
 
 const Login = () => {
   
-  console.log(process.env)
   const [password, setPass] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
