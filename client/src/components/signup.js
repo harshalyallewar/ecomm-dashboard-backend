@@ -51,7 +51,7 @@ const Signup = () => {
 
       dispatch(showLoading())
 
-      let result = await fetch("/register", {
+      let result = await fetch("http://localhost:10/register", {
         method: "POST",
         body: JSON.stringify({ name, email, password }),
         headers: { "Content-Type": "application/json" },

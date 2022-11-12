@@ -133,17 +133,20 @@ app.put("/updateProduct/:id", tokenVerify, async (req, res) => {
   }
 });
 
-app.get("/search/:key", tokenVerify, async (req, res) => {
+app.get("/search/:key/:id", tokenVerify, async (req, res) => {
+  console.log(req.params);
   try {
+    
+
     let result = await Product.find({
       $or: [
         { name: { $regex: req.params.key } },
         { category: { $regex: req.params.key } },
         { company: { $regex: req.params.key } },
-      ],
+      ],userId: req.params.id
     });
-
-    res.send(result);
+console.log(result);
+    res.send({result,success:true});
   } catch {
     res.send({ result: "no result", success: false });
   }
@@ -179,7 +182,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT || 20;
+const port = process.env.PORT || 10;
 
 app.listen(port, () => {
   console.log("server is listening");

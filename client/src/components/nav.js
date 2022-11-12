@@ -96,20 +96,28 @@ function Nav() {
             display: { xs: "none", md: "flex" },
           }}
         >
-          <Button>
-            <DashboardIcon sx={{ color: "white", fontSize: "45px" }} />
-          </Button>
+          <Link key="homelogo" to="/">
+            <Button>
+              <DashboardIcon sx={{ color: "white", fontSize: "45px" }} />
+            </Button>
+          </Link>
 
-          <Button component="button" sx={{ textTransform: "none" }}>
-            <Typography
-              component="p"
-              px={1}
-              variant="h6"
-              sx={{ color: "white", fontWeight: "bold", letterSpacing: "1px" }}
-            >
-              DashBoard
-            </Typography>
-          </Button>
+          <Link key="hometext" to="/">
+            <Button component="button" sx={{ textTransform: "none" }}>
+              <Typography
+                component="p"
+                px={1}
+                variant="h6"
+                sx={{
+                  color: "white",
+                  fontWeight: "bold",
+                  letterSpacing: "1px",
+                }}
+              >
+                DashBoard
+              </Typography>
+            </Button>
+          </Link>
         </Box>
 
         <Box sx={{ ml: 7, display: { xs: "none", md: "flex" } }}>
