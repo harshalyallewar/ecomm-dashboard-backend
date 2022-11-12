@@ -21,6 +21,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/alertsSlice";
 
 const Login = () => {
+  
+  console.log(process.env)
   const [password, setPass] = useState("");
   const [email, setEmail] = useState("");
   const navigate = useNavigate();
@@ -47,7 +49,7 @@ const Login = () => {
       return;
     }
     dispatch(showLoading());
-    let result = await fetch("http://localhost:10/login", {
+    let result = await fetch("/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
       headers: {

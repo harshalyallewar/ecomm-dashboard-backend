@@ -54,7 +54,7 @@ const AddProduct = () => {
     console.log("add prodcut called");
     dispatch(showLoading());
 
-    let result = await fetch("http://localhost:10/add-product", {
+    let result = await fetch("/add-product", {
       method: "POST",
       body: JSON.stringify({ name, price, category, userId, company }),
       headers: {

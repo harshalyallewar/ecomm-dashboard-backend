@@ -36,7 +36,7 @@ const ProductList = () => {
      
       
       
-      let result = await fetch(`http://localhost:10/productList/${user._id}`, {
+      let result = await fetch(`/productList/${user._id}`, {
         headers: {
           authorization: `bearer ${JSON.parse(
             localStorage.getItem("token")
@@ -58,7 +58,7 @@ const ProductList = () => {
 
     const deleteProduct = async (id)=>{
       dispatch(showLoading());
-      let result = await fetch(`http://localhost:10/deleteProduct/${id}`, {
+      let result = await fetch(`/deleteProduct/${id}`, {
         method: "DELETE",
         headers: {
           authorization: `bearer ${await JSON.parse(
@@ -79,7 +79,7 @@ const ProductList = () => {
       }
       
       let result = await fetch(
-        `http://localhost:10/search/${e.target.value}/${user._id}`,
+        `/search/${e.target.value}/${user._id}`,
         {
           method: "GET",
           headers: {
@@ -94,7 +94,7 @@ const ProductList = () => {
       if(!result){
         return;
       }
-      
+
       result = await result.json();
       
       if(result.success){
