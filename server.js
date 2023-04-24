@@ -14,14 +14,10 @@ const jwtKey = "e-comm";
 
 app.use(
   cors({
-    origin: "*",
+    origin: "http://localhost:3000",
   })
 );
 app.use(express.json());
-
-// app.get("/allUsers", async (req, res) => {
-//   res.send(await User.find());
-// });
 
 app.post("/register", async (req, res) => {
   try {
@@ -173,13 +169,6 @@ function tokenVerify(req, res, next) {
   } catch {
     res.send({ result: "no result", success: false });
   }
-}
-
-if (process.env.NODE_ENV === "production") {
-  app.use("/", express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "./client/build/index.html"));
-  });
 }
 
 const port = process.env.PORT || 10;
