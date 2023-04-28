@@ -14,7 +14,7 @@ const jwtKey = "e-comm";
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: ["http://localhost:3000", "https://ecomm-dashboard.onrender.com/"],
   })
 );
 app.use(express.json());
