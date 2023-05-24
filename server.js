@@ -14,7 +14,11 @@ const jwtKey = "e-comm";
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://ecomm-dashboard.onrender.com/"],
+    origin: [
+      "http://localhost:3000",
+      "https://ecomm-dashboard.onrender.com/",
+      "https://ecomm-dashboard-frontend.netlify.app/",
+    ],
   })
 );
 app.use(express.json());
